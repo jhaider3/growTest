@@ -1,6 +1,6 @@
 
 
-describe('Test expansion', function() {
+describe('Test to expand and close a metric', function() {
     it('Navigates to dashboard', function() {
 
         //navigates to dashboard login page

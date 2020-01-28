@@ -1,10 +1,11 @@
 
 
-describe('Test to expand and close a metric', function() {
+
+describe('Test expansion', function() {
     it('Navigates to dashboard', function() {
 
         //navigates to dashboard login page
-        cy.visit('https://app.gogrow.com/dashboard/')
+        cy.visit('https://app.gogrow.com/login')
 
        
         //enters valid email address
@@ -30,7 +31,13 @@ describe('Test to expand and close a metric', function() {
         //clicks x button
         cy.get('.topBar---closeButton---zyjHJ > .isvg > svg').click()
 
+        //logs out when completed 
+        cy.get('.avatar---avatar---4SpC6 > div').click()
+        cy.get('.STATIC-globalNav-accountUserSettings-logout').click()
 
+        //verify logout worked
+        cy.url()
+            .should('include', '/login')
 
     })
 })
